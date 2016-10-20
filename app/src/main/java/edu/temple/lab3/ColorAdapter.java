@@ -12,6 +12,9 @@ public class ColorAdapter extends ArrayAdapter{
 
 
     private String[] objects;
+    static final String[] colorArr = {"lightGray", "Red", "Yellow", "Green", "Cyan"};
+
+
 
     public ColorAdapter(Context context, int resource, String[] objects) {
         super(context, resource, objects);
@@ -25,7 +28,7 @@ public class ColorAdapter extends ArrayAdapter{
         //changes the color of each individual row of list view based on text
         for(int i=0; i<objects.length; i++){
             if(position == i){
-                newView.setBackgroundColor(Color.parseColor(objects[i]));
+                newView.setBackgroundColor(Color.parseColor(colorArr[i]));
             }
         }
 

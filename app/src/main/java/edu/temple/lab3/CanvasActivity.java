@@ -11,6 +11,7 @@ import android.widget.Toast;
 public class CanvasActivity extends AppCompatActivity{
 
     RelativeLayout rl;
+    static final String[] colorArr = {"lightGray", "Red", "Yellow", "Green", "Cyan"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,11 +21,13 @@ public class CanvasActivity extends AppCompatActivity{
         //extract the color string from PaletteActivity
         Intent intent = getIntent();
         String color = intent.getExtras().getString("colorPicked"); //colorPicked is the key from the PaletteActivity
+        int position = Integer.parseInt(color);
 
         //put layout into variable
         rl = (RelativeLayout) findViewById(R.id.MyLayout);
 
+
         //set the background of the activity to the color you picked
-        rl.setBackgroundColor(Color.parseColor(color));
+        rl.setBackgroundColor(Color.parseColor(colorArr[position]));
     }
 }
